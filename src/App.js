@@ -2,37 +2,43 @@ import React from 'react';
 import {
   ChakraProvider,
   Box,
-  Text,
-  Link,
   VStack,
-  Code,
   Grid,
   theme,
+  Tabs, 
+  TabList, 
+  TabPanels, 
+  Tab, 
+  TabPanel
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import Record from './components/Record';
+import IndependentTask from './components/IndependentTask';
 
 function App() {
+  
   return (
     <ChakraProvider theme={theme}>
       <Box textAlign="center" fontSize="xl">
         <Grid minH="100vh" p={3}>
           <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
+          <Tabs>
+            <TabList>
+              <Tab>Introduction</Tab>
+              <Tab>Task 1</Tab>
+            </TabList>
+            <TabPanels>
+              <TabPanel>
+                <p>Introduction</p>
+              </TabPanel>
+              <TabPanel>
+                <VStack spacing={8}>
+                  <IndependentTask />
+                  <Record />
+                </VStack>
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
         </Grid>
       </Box>
     </ChakraProvider>
