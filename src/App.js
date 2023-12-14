@@ -12,7 +12,6 @@ import {
   TabPanel
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
-import Record from './components/Record';
 import IndependentTask from './components/IndependentTask';
 
 function App() {
@@ -22,19 +21,14 @@ function App() {
       <Box textAlign="center" fontSize="xl">
         <Grid minH="100vh" p={3}>
           <ColorModeSwitcher justifySelf="flex-end" />
-          <Tabs>
+          <Tabs colorScheme='teal' width='80vw' height='100vh' justifySelf='center' justifyContent='center'>
             <TabList>
-              <Tab>Introduction</Tab>
-              <Tab>Task 1</Tab>
+              <Tab>Speaking Task</Tab>
             </TabList>
             <TabPanels>
               <TabPanel>
-                <p>Introduction</p>
-              </TabPanel>
-              <TabPanel>
                 <VStack spacing={8}>
                   <IndependentTask />
-                  <Record />
                 </VStack>
               </TabPanel>
             </TabPanels>
